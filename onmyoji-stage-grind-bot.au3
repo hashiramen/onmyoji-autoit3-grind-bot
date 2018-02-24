@@ -43,7 +43,7 @@ Func SearchAreaForColor()
       $pix = PixelSearch($left, $top, $right, $bottom, $color, $variation)
 
       if not @error Then
-        MouseClick("left", $pix[0], $pix[1], 1, 1)
+        Click($pix[0], $pix[1])
         BeginCombat()
         $startTime = TimerInit()
       EndIf
@@ -65,9 +65,9 @@ EndFunc
 Func BeginCombat()
   Sleep(13000)
   $YourEnergy = $YourEnergy - 3
-  MouseClick("left", 1652, 806, 1, 1)
+  Click(1652, 806)
   Sleep($combatSleepTime)
-  MouseClick("left", 1652, 806, 1, 1)
+  Click(1652, 806)
   Sleep(5500)
 EndFunc
 
