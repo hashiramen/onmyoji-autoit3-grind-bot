@@ -1,12 +1,13 @@
 ; Haven't tested it on other simulators.. but it works on BlueStacks, you just have to fullscreen it and use the 1920 x 1080 display screen
-
 #include <MsgBoxConstants.au3>
 HotKeySet("{f1}", "StopGrind")
 
+AppType()
 Global $YourEnergy = InputBox("Energy Amount", "What is your current energy?", "", "")
 Global $StageKillingTime = InputBox("Battle Time", "How long(in seconds) does it takes you to kill stage with auto battle?", "", "")
 Global $Difficulty = InputBox("Difficulty", "Which difficulty do you want?(type 'hard' or 'easy')?", "", "")
 
+Global $AppType = "BlueStacks"
 Global $color = 0xf9b4ba
 Global $combatSleepTime = $StageKillingTime * 1000
 
@@ -14,7 +15,7 @@ Grind()
 
 Func Grind()
   Sleep(5000)
-  WinActivate("BlueStacks")
+  WinActivate($AppType)
   SearchAreaForColor()
 EndFunc
 
@@ -78,6 +79,5 @@ EndFunc
 Func StopGrind()
   exit
 EndFunc
-
 
 ; Link to main source https://github.com/hashiramen/onmyoji-autoit3-grind-bot
