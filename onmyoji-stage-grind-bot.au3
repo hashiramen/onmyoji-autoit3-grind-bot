@@ -2,7 +2,6 @@
 #include <MsgBoxConstants.au3>
 HotKeySet("{f1}", "StopGrind")
 
-AppType()
 Global $YourEnergy = InputBox("Energy Amount", "What is your current energy?", "", "")
 Global $StageKillingTime = InputBox("Battle Time", "How long(in seconds) does it takes you to kill stage with auto battle?", "", "")
 Global $Difficulty = InputBox("Difficulty", "Which difficulty do you want?(type 'hard' or 'easy')?", "", "")
